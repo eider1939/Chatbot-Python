@@ -32,15 +32,15 @@ def check_all_messages(message):
     response('Hola',['hola','klk','buenas','saludos'],single_response=True)
     response('Estoy bien y tu',['como','estas','va','vas','sientes'],required_words=['como'])
     response('Estamos ubicados en la calle 23 numero 123',['ubicados','dirrecion','donde','ubicados'],single_response=True)
-    response('Siempre a la orden',['gracias','te lo agradezco','thsnks'],single_response=True)
+    response('Siempre a la orden',['gracias','te lo agradezco','thanks'],single_response=True)
 
     best_match=max(highest_prob,key=highest_prob.get)
-    print(highest_prob)
+    #print(highest_prob)
 
     return unknown() if highest_prob[best_match] < 1 else best_match
 
 def unknown():
     response = ['puedes decirlo de nuevo?', 'No estoy seguro de lo quieres', 'búscalo en google a ver que tal'][random.randrange(3)]
     return response
-while True:
-    print("Bot: "+ get_response(input('You: ')))
+#while True:
+#    print("Bot: "+ get_response(input('You: ')))
