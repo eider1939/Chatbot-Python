@@ -1,14 +1,15 @@
 from tkinter import *
 import tkinter as tk
 from tkinter import ttk
-from background import chat
+from background import chat_1
 from functools import partial
 ####
 # funcion enviar
 
 def enviar(mensaje):
     texto=mensaje.get()
-    respuesta=chat.get_response(texto)
+    respuesta=chat_1.get_response(texto)
+    text_1.delete(0,"end")
     mostrar(texto,respuesta)
 
 def mostrar(texto,respuesta):
